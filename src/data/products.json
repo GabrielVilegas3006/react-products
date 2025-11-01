@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "name": "Huesito Amarillo",
+    "price": 7,
+    "description": "Juguete para cachorros o perritos de raza pequeñita.",
+    "image": "/src/assets/huesito.png"
+
+  },
+  {
+    "id": 2,
+    "name": "Pelota Erizo",
+    "price": 5,
+    "description": "Juguete para cachorros o perritos de raza pequeñita",
+    "image": "/src/assets/erizo.png"
+
+  },
+  {
+    "id": 3,
+    "name": "Paquete de Pañales",
+    "price": 30,
+    "description": "Paquete de pañales de 40 unidades talla L para cachorros",
+    "image": "/src/assets/pañales.png"
+  }
+]
