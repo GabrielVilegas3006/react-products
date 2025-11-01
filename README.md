@@ -1,16 +1,85 @@
-# React + Vite
+# 🛍️ React Products
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación creada con **React + Vite**, que muestra una lista de productos cargados desde un archivo JSON local.  
+Forma parte del entregable del curso de React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Instalación
 
-## React Compiler
+1. Clonar el repositorio:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```bash
+   git clone https://github.com/GabrielVilegas3006/react-products.git
+   ```
 
-## Expanding the ESLint configuration
+2. Entrar al directorio del proyecto:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   cd react-products
+   ```
+
+3. Instalar dependencias:
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## ▶️ Ejecución en modo desarrollo
+
+Inicia el servidor local con:
+
+```bash
+npm run dev
+```
+
+Luego abre en el navegador la URL que aparece en la terminal, por ejemplo:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 📦 Estructura del proyecto
+
+```
+react-products/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/        ← imágenes de productos
+│   ├── components/    ← ProductList.jsx y ProductItem.jsx
+│   ├── data/          ← products.json
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md          
+└── vite.config.js
+```
+
+---
+
+## 🧩 Descripción
+
+El proyecto muestra una lista de productos a partir de un archivo JSON local.  
+Cada producto contiene nombre, descripción, precio e imagen, renderizados mediante los componentes:
+
+- ProductList: Contenedor principal que carga los productos.
+- ProductItem: Tarjeta individual para cada producto.
+
+---
+
+## 💻 Tecnologías utilizadas
+
+- React 18
+- Vite
+- CSS3
