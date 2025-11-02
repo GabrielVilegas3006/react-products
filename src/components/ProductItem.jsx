@@ -1,5 +1,6 @@
 function ProductItem({ name, price, description, image }) {
-  const imgSrc = new URL(image, import.meta.url).href;
+  // Como image ya es URL pÃºblica, solo usamos directamente
+  const imgSrc = image;
 
   return (
     <div className="card">

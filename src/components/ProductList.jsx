@@ -1,7 +1,35 @@
+import { useEffect, useState } from "react";
 import ProductItem from "./ProductItem";
-import products from "../data/products.json";
+
+// URL de tu Lambda / API Gateway
+const API_URL = "https://rqhbhtjdt2.execute-api.us-east-2.amazonaws.com/ejemplo/products";
 
 function ProductList() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch(API_URL);
+        if (!res.ok) throw new Error("HTTP error " + res.status);
+        const data = await res.json();
+        setProducts(data);
+      } catch (err) {
+        setError(err.message || "Error al cargar productos");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) return <div style={{ textAlign: "center" }}>Cargando productos...</div>;
+  if (error) return <div style={{ textAlign: "center", color: "red" }}>Error: {error}</div>;
+  if (!products.length) return <div style={{ textAlign: "center" }}>No hay productos.</div>;
+
   return (
     <div style={styles.wrapper}>
       <div style={styles.container}>
@@ -11,7 +39,7 @@ function ProductList() {
             name={product.name}
             price={product.price}
             description={product.description}
-            image={product.image}
+            image={product.image} // ya es URL pÃºblica
           />
         ))}
       </div>
